@@ -58,7 +58,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation("androidx.appcompat:appcompat:1.3.1") // Ajout pour compatibilité Bluetooth
+    implementation("androidx.appcompat:appcompat:1.3.1")
+    implementation(libs.androidx.navigation.compose) //  Bluetooth
+    implementation("com.github.mik3y:usb-serial-for-android:3.4.6")
 
     // Test libraries
     testImplementation(libs.junit)

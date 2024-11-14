@@ -1,105 +1,77 @@
 package com.example.keyboard
 
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.hardware.usb.UsbManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.*
+import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.keyboard.ui.theme.KeyboardTheme
-import androidx.compose.ui.Alignment
-import android.content.Context
-
-
-import android.hardware.usb.UsbDevice
-import android.hardware.usb.UsbDeviceConnection
-import android.hardware.usb.UsbEndpoint
-import android.hardware.usb.UsbManager
-import android.hardware.usb.UsbConstants
-import androidx.core.content.ContextCompat
-
-
+import com.example.keyboard.ui.AnimatedSplashScreen
 
 class MainActivity : ComponentActivity() {
+
+    private lateinit var usbHandler: USBHandler
+    private lateinit var connectionViewModel: USBConnectionViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Initialise
+        usbHandler = USBHandler(getSystemService(Context.USB_SERVICE) as UsbManager)
+        connectionViewModel = USBConnectionViewModel(usbHandler, this)
+
+        // splash screen + écran principal
         setContent {
             KeyboardTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    BluetoothKeyboardUI(
-                        modifier = Modifier.padding(innerPadding),
-                        context = this
-                    )
-                }
+                MainScreen(connectionViewModel)
+            }
+        }
+
+        // Enregistrer le récepteur pour détecter la connexion USB
+        val filter = IntentFilter().apply {
+            addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED)
+            addAction(UsbManager.ACTION_USB_DEVICE_DETACHED)
+        }
+        registerReceiver(usbBroadcastReceiver, filter)
+    }
+
+    // Gestionnaire des événements USB
+    private val usbBroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent) {
+            when (intent.action) {
+                UsbManager.ACTION_USB_DEVICE_ATTACHED -> connectionViewModel.initializeConnection()
+                UsbManager.ACTION_USB_DEVICE_DETACHED -> connectionViewModel.disconnect()
             }
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(usbBroadcastReceiver)
+    }
 }
 
 @Composable
-fun BluetoothKeyboardUI(modifier: Modifier = Modifier, context: Context) {
-    var textState by remember { mutableStateOf("") }
+fun MainScreen(connectionViewModel: USBConnectionViewModel) {
+    // Variable d'état pour contrôler l'affichage du splash screen
+    var showSplash by remember { mutableStateOf(true) }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        OutlinedTextField(
-            value = textState,
-            onValueChange = { newText -> textState = newText },
-            label = { Text("Tapez votre texte") },
-            modifier = Modifier.fillMaxWidth()
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Button(
-            onClick = {
-                // Appel de la fonction pour envoyer le texte via USB
-                sendTextToCircuitPy(context, textState)
-            },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(text = "Envoyer")
-        }
-    }
-}
-
-// Fonction pour envoyer du texte via USB à CIRCUITPY
-// MAIS PAS SUR, TEST DE USB CAR ECHEC VIA BLUETOOTH :(
-private fun sendTextToCircuitPy(context: Context, message: String) {
-    // Gestionnaire USB pour accéder au périphérique CIRCUITPY
-    val usbManager = ContextCompat.getSystemService(context, UsbManager::class.java) as UsbManager
-    val deviceList: HashMap<String, UsbDevice> = usbManager.deviceList
-    var device: UsbDevice? = null
-
-    // Recherche du périphérique CIRCUITPY par son nom
-    for (d in deviceList.values) {
-        if (d.productName?.contains("CIRCUITPY6ed3", ignoreCase = true) == true) {
-            device = d
-            break
-        }
-    }
-
-    if (device != null) {
-        println("Périphérique CIRCUITPY trouvé")
+    if (showSplash) {
+        AnimatedSplashScreen(onComplete = { showSplash = false })
     } else {
-        println("Périphérique CIRCUITPY non trouvé")
+        // Usplash terminé, afficher l'écran
+        Scaffold { innerPadding ->
+            MyApp(
+                viewModel = connectionViewModel,
+                modifier = Modifier.padding(innerPadding)
+            )
+        }
     }
 }
-
-
-
-/*@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    KeyboardTheme {
-        BluetoothKeyboardUI()
-    }
-}*/
