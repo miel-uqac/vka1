@@ -61,6 +61,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation(libs.androidx.navigation.compose) //  Bluetooth
     implementation("com.github.mik3y:usb-serial-for-android:3.4.6")
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.ui.test.android)
 
     // Test libraries
     testImplementation(libs.junit)

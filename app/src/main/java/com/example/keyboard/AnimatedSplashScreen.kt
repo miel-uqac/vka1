@@ -16,16 +16,17 @@ import androidx.compose.ui.res.painterResource
 import com.example.keyboard.R
 import kotlinx.coroutines.delay
 
+
 @Composable
 fun AnimatedSplashScreen(onComplete: () -> Unit) {
     val alpha = remember { Animatable(0f) }
     val scale = remember { Animatable(0.8f) }
 
     LaunchedEffect(Unit) {
-        // Animation slpash
+        // Animation splash
         alpha.animateTo(1f, animationSpec = tween(durationMillis = 1000))
         scale.animateTo(1f, animationSpec = tween(durationMillis = 1000))
-        delay(2000) // Garde l'écran un peu
+        delay(2000) // Keep the screen visible for 2 seconds
         onComplete()
     }
 

@@ -56,7 +56,11 @@ Main loop
 #IDENTIFIANTS SPECIFIQUES 
 copier = "#$001"
 coller = "#$002"
-
+suppr = r"\b"
+up_arrow = "up"
+down_arrow = "down"
+left_arrow = "left"
+right_arrow = "right"
 
 while True:
     while not ble.connected:
@@ -90,7 +94,25 @@ while True:
         elif _str == coller:
             k.press(Keycode.CONTROL, Keycode.V)
             k.release_all()
+            
+        elif _str == up_arrow:
+            k.press(Keycode.UP_ARROW)
+            k.release_all()
 
+        elif _str == down_arrow:
+            k.press(Keycode.DOWN_ARROW)
+            k.release_all()
+
+        elif _str == left_arrow:
+            k.press(Keycode.LEFT_ARROW)
+            k.release_all()
+
+        elif _str == right_arrow:
+            k.press(Keycode.RIGHT_ARROW)
+            k.release_all()
+
+        elif _str == suppr:
+            k.send(Keycode.BACKSPACE)
             
         else:
             kl.write(_str)
