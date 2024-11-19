@@ -1,0 +1,185 @@
+Index: vka1/app/src/main/java/com/example/keyboard/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.keyboard\r\n\r\nimport android.os.Bundle\r\nimport androidx.activity.ComponentActivity\r\nimport androidx.activity.compose.setContent\r\nimport androidx.compose.foundation.layout.*\r\nimport androidx.compose.material3.*\r\nimport androidx.compose.runtime.*\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport androidx.compose.ui.unit.dp\r\nimport com.example.keyboard.ui.theme.KeyboardTheme\r\nimport androidx.compose.ui.Alignment\r\nimport android.content.Context\r\n\r\n\r\nimport android.hardware.usb.UsbDevice\r\nimport android.hardware.usb.UsbDeviceConnection\r\nimport android.hardware.usb.UsbEndpoint\r\nimport android.hardware.usb.UsbManager\r\nimport android.hardware.usb.UsbConstants\r\nimport androidx.core.content.ContextCompat\r\n\r\n\r\n\r\nclass MainActivity : ComponentActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContent {\r\n            KeyboardTheme {\r\n                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->\r\n                    BluetoothKeyboardUI(\r\n                        modifier = Modifier.padding(innerPadding),\r\n                        context = this\r\n                    )\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@Composable\r\nfun BluetoothKeyboardUI(modifier: Modifier = Modifier, context: Context) {\r\n    var textState by remember { mutableStateOf(\"\") }\r\n\r\n    Column(\r\n        modifier = Modifier\r\n            .fillMaxSize()\r\n            .padding(16.dp),\r\n        verticalArrangement = Arrangement.Center,\r\n        horizontalAlignment = Alignment.CenterHorizontally\r\n    ) {\r\n        OutlinedTextField(\r\n            value = textState,\r\n            onValueChange = { newText -> textState = newText },\r\n            label = { Text(\"Tapez votre texte\") },\r\n            modifier = Modifier.fillMaxWidth()\r\n        )\r\n\r\n        Spacer(modifier = Modifier.height(16.dp))\r\n\r\n        Button(\r\n            onClick = {\r\n                // Appel de la fonction pour envoyer le texte via USB\r\n                sendTextToCircuitPy(context, textState)\r\n            },\r\n            modifier = Modifier.fillMaxWidth()\r\n        ) {\r\n            Text(text = \"Envoyer\")\r\n        }\r\n    }\r\n}\r\n\r\n// Fonction pour envoyer du texte via USB à CIRCUITPY\r\n// MAIS PAS SUR, TEST DE USB CAR ECHEC VIA BLUETOOTH :(\r\nprivate fun sendTextToCircuitPy(context: Context, message: String) {\r\n    // Gestionnaire USB pour accéder au périphérique CIRCUITPY\r\n    val usbManager = ContextCompat.getSystemService(context, UsbManager::class.java) as UsbManager\r\n    val deviceList: HashMap<String, UsbDevice> = usbManager.deviceList\r\n    var device: UsbDevice? = null\r\n\r\n    // Recherche du périphérique CIRCUITPY par son nom\r\n    for (d in deviceList.values) {\r\n        if (d.productName?.contains(\"CIRCUITPY6ed3\", ignoreCase = true) == true) {\r\n            device = d\r\n            break\r\n        }\r\n    }\r\n\r\n    if (device != null) {\r\n        println(\"Périphérique CIRCUITPY trouvé\")\r\n    } else {\r\n        println(\"Périphérique CIRCUITPY non trouvé\")\r\n    }\r\n}\r\n\r\n\r\n\r\n/*@Preview(showBackground = true)\r\n@Composable\r\nfun GreetingPreview() {\r\n    KeyboardTheme {\r\n        BluetoothKeyboardUI()\r\n    }\r\n}*/\r\n
+===================================================================
+diff --git a/vka1/app/src/main/java/com/example/keyboard/MainActivity.kt b/vka1/app/src/main/java/com/example/keyboard/MainActivity.kt
+--- a/vka1/app/src/main/java/com/example/keyboard/MainActivity.kt	
++++ b/vka1/app/src/main/java/com/example/keyboard/MainActivity.kt	
+@@ -1,29 +1,26 @@
+ package com.example.keyboard
+ 
++import android.content.Context
++import android.hardware.usb.UsbConstants
++import android.hardware.usb.UsbDevice
++import android.hardware.usb.UsbDeviceConnection
++import android.hardware.usb.UsbEndpoint
++import android.hardware.usb.UsbManager
+ import android.os.Bundle
++import android.util.Log
+ import androidx.activity.ComponentActivity
+ import androidx.activity.compose.setContent
+ import androidx.compose.foundation.layout.*
+-import androidx.compose.material3.*
++import androidx.compose.material.*
+ import androidx.compose.runtime.*
+ import androidx.compose.ui.Modifier
+-import androidx.compose.ui.tooling.preview.Preview
+ import androidx.compose.ui.unit.dp
+-import com.example.keyboard.ui.theme.KeyboardTheme
+-import androidx.compose.ui.Alignment
+-import android.content.Context
+-
+-
+-import android.hardware.usb.UsbDevice
+-import android.hardware.usb.UsbDeviceConnection
+-import android.hardware.usb.UsbEndpoint
+-import android.hardware.usb.UsbManager
+-import android.hardware.usb.UsbConstants
+ import androidx.core.content.ContextCompat
+-
+-
++import com.example.keyboard.ui.theme.KeyboardTheme
++import java.nio.charset.StandardCharsets
+ 
+ class MainActivity : ComponentActivity() {
++
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContent {
+@@ -37,69 +34,78 @@
+             }
+         }
+     }
+-}
+ 
+-@Composable
+-fun BluetoothKeyboardUI(modifier: Modifier = Modifier, context: Context) {
+-    var textState by remember { mutableStateOf("") }
++    @Composable
++    fun BluetoothKeyboardUI(modifier: Modifier = Modifier, context: Context) {
++        var textState by remember { mutableStateOf("") }
+ 
+-    Column(
+-        modifier = Modifier
+-            .fillMaxSize()
+-            .padding(16.dp),
+-        verticalArrangement = Arrangement.Center,
+-        horizontalAlignment = Alignment.CenterHorizontally
+-    ) {
+-        OutlinedTextField(
+-            value = textState,
+-            onValueChange = { newText -> textState = newText },
+-            label = { Text("Tapez votre texte") },
+-            modifier = Modifier.fillMaxWidth()
+-        )
++        Column(
++            modifier = Modifier
++                .fillMaxSize()
++                .padding(16.dp),
++            verticalArrangement = Arrangement.Center,
++            horizontalAlignment = Alignment.CenterHorizontally
++        ) {
++            OutlinedTextField(
++                value = textState,
++                onValueChange = { newText -> textState = newText },
++                label = { Text("Tapez votre texte") },
++                modifier = Modifier.fillMaxWidth()
++            )
+ 
+-        Spacer(modifier = Modifier.height(16.dp))
++            Spacer(modifier = Modifier.height(16.dp))
+ 
+-        Button(
+-            onClick = {
+-                // Appel de la fonction pour envoyer le texte via USB
+-                sendTextToCircuitPy(context, textState)
+-            },
+-            modifier = Modifier.fillMaxWidth()
+-        ) {
+-            Text(text = "Envoyer")
+-        }
+-    }
+-}
++            Button(
++                onClick = {
++                    // Envoie le texte via USB à CIRCUITPY
++                    sendTextToCircuitPy(context, textState)
++                },
++                modifier = Modifier.fillMaxWidth()
++            ) {
++                Text(text = "Envoyer")
++            }
++        }
++    }
+ 
+-// Fonction pour envoyer du texte via USB à CIRCUITPY
+-// MAIS PAS SUR, TEST DE USB CAR ECHEC VIA BLUETOOTH :(
+-private fun sendTextToCircuitPy(context: Context, message: String) {
+-    // Gestionnaire USB pour accéder au périphérique CIRCUITPY
+-    val usbManager = ContextCompat.getSystemService(context, UsbManager::class.java) as UsbManager
+-    val deviceList: HashMap<String, UsbDevice> = usbManager.deviceList
+-    var device: UsbDevice? = null
++    private fun sendTextToCircuitPy(context: Context, message: String) {
++        val usbManager = ContextCompat.getSystemService(context, UsbManager::class.java) as UsbManager
++        val deviceList = usbManager.deviceList
++        var device: UsbDevice? = null
+ 
+-    // Recherche du périphérique CIRCUITPY par son nom
+-    for (d in deviceList.values) {
+-        if (d.productName?.contains("CIRCUITPY6ed3", ignoreCase = true) == true) {
+-            device = d
+-            break
+-        }
+-    }
++        // Recherche du périphérique CIRCUITPY
++        for (d in deviceList.values) {
++            if (d.productName?.contains("CIRCUITPY", ignoreCase = true) == true) {
++                device = d
++                break
++            }
++        }
+ 
+-    if (device != null) {
+-        println("Périphérique CIRCUITPY trouvé")
+-    } else {
+-        println("Périphérique CIRCUITPY non trouvé")
+-    }
+-}
++        if (device == null) {
++            Log.d("USB", "Périphérique CIRCUITPY non trouvé")
++            return
++        }
++
++        // Connexion et envoi des données
++        val connection: UsbDeviceConnection = usbManager.openDevice(device) ?: return
++        val usbInterface = device.getInterface(0)
++        connection.claimInterface(usbInterface, true)
++
++        // Obtenir l'endpoint OUT pour envoyer les données
++        val endpoint: UsbEndpoint? = (0 until usbInterface.endpointCount)
++            .map { usbInterface.getEndpoint(it) }
++            .firstOrNull { it.direction == UsbConstants.USB_DIR_OUT }
++
++        endpoint?.let {
++            val messageBytes = message.toByteArray(StandardCharsets.UTF_8)
++            val result = connection.bulkTransfer(endpoint, messageBytes, messageBytes.size, 1000)
++            if (result >= 0) {
++                Log.d("USB", "Message envoyé : $message")
++            } else {
++                Log.e("USB", "Erreur lors de l'envoi des données")
++            }
++        }
+ 
+-
+-
+-/*@Preview(showBackground = true)
+-@Composable
+-fun GreetingPreview() {
+-    KeyboardTheme {
+-        BluetoothKeyboardUI()
++        connection.releaseInterface(usbInterface)
++        connection.close()
+     }
+-}*/
++}
