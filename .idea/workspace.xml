@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/vka1/app/src/main/res/xml/device_filter.xml">
+        <config>
+          <theme>@style/Theme.Keyboard</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ca5c14d1-b8bd-4ec9-8940-8bb41c11bac4" name="Changes" comment="Push V0 Keyboard Alex">
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/ic_launcher2-playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/USBController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/USBStatusScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/KlavierScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/USBController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/USBModelView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/ui/MainScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/ui/SettingsScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/ui/SplashScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/ui/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/ui/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/klavier/ui/theme/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/drawable/ic_launcher2_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-anydpi-v26/ic_launcher2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-anydpi-v26/ic_launcher2_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-hdpi/ic_launcher2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-hdpi/ic_launcher2_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-hdpi/ic_launcher2_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-mdpi/ic_launcher2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-mdpi/ic_launcher2_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-mdpi/ic_launcher2_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-xhdpi/ic_launcher2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-xhdpi/ic_launcher2_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-xhdpi/ic_launcher2_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-xxhdpi/ic_launcher2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-xxhdpi/ic_launcher2_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-xxhdpi/ic_launcher2_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-xxxhdpi/ic_launcher2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-xxxhdpi/ic_launcher2_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vka1/app/src/main/res/mipmap-xxxhdpi/ic_launcher2_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/keyboard/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/keyboard/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/keyboard/ui/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/keyboard/ui/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/keyboard/ui/theme/Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/keyboard/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/vka1/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vka1/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/ConfigScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/HomeScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/MyApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/MyApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/Screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/AnimatedSplashScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/USBConnectionViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/USBConnectionViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/src/main/java/com/example/keyboard/USBHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vka1/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vka1/board/code.py" beforeDir="false" afterPath="$PROJECT_DIR$/vka1/board/code.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=HVA68L1M)]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/vka1/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Keyboard" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Keyboard" type="f1a62948:ProjectNode" />
+                <item name="vka1" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Keyboard" type="f1a62948:ProjectNode" />
+                <item name="vka1" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Keyboard" type="f1a62948:ProjectNode" />
+                <item name="vka1" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Keyboard" type="f1a62948:ProjectNode" />
+                <item name="vka1" type="2d1252cf:ModuleNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/vka1" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vka1" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Algo45&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/miel-uqac/vka1.git&quot;,
+    &quot;accountId&quot;: &quot;711d0e42-4a2b-4dd5-9774-0621229da62b&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2nmLnv8LiIGADFPJ79ZJrAQlOQH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Android App.app.executor": "Run",
+    "Android App.vka1.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Alex",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/AGO/AndroidStudioProjects/Keyboard/vka1/app/src/main/java/com/example/keyboard",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Subversion.SSH"
+  },
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\AGO\\.gradle"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AGO\AndroidStudioProjects\Keyboard\vka1\app\src\main\java\com\example\keyboard" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.example.keyboard" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.vka1.app">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Keyboard.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="vka1.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Keyboard.vka1.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\AGO\AppData\Roaming\Subversion</configuration>
+    <option name="sshConnectionType" value="PRIVATE_KEY" />
+    <option name="sshExecutablePath" value="git@github.com:Algo45/8INF865A2024_AG.git" />
+    <option name="sshUserName" value="Algo45" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca5c14d1-b8bd-4ec9-8940-8bb41c11bac4" name="Changes" comment="" />
+      <created>1729573475295</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729573475295</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Push V0 Keyboard Alex">
+      <option name="closed" value="true" />
+      <created>1731543981741</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731543981741</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Push V0 Keyboard Alex">
+      <option name="closed" value="true" />
+      <created>1731544174359</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731544174359</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Push V0 Keyboard Alex" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push V0 Keyboard Alex" />
+  </component>
+</project>
